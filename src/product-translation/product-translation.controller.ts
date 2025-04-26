@@ -12,10 +12,10 @@ export class ProductTranslationController {
   //   return this.productTranslationService.create(createProductTranslationDto);
   // }
 
-  // @Get()
-  // findAll() {
-  //   return this.productTranslationService.findAll();
-  // }
+  @Get()
+  async findAll() {
+    return this.productTranslationService.findAll();
+  }
 
   // @Get(':id')
   // findOne(@Param('id') id: string) {

@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty } from 'class-validator';
-import { ProductTranslation } from 'src/product-translation/entities/product-translation.entity';
+import { CreateProductTranslationDto } from 'src/product-translation/dto/create-product-translation.dto';
 
 export class CreateProductDto {
   @ApiProperty({
@@ -36,5 +36,5 @@ export class CreateProductDto {
     ],
   })
   @IsNotEmpty()
-  productTranslation: ProductTranslation[];
+  productTranslation: CreateProductTranslationDto[];
 }

@@ -78,6 +78,7 @@ export class ProductService {
     return plainToInstance(PaginationProductResponseDto, {
       page,
       limit,
+      total,
       data: results,
     });
   }

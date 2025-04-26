@@ -19,14 +19,21 @@ export class PaginationResponseDto {
   })
   @Expose()
   @Type(() => Number)
-  page?: number = 1;
+  page: number = 1;
 
   @ApiPropertyOptional({
     example: 10,
   })
   @Expose()
   @Type(() => Number)
-  limit?: number = 10;
+  limit: number = 10;
+
+  @ApiPropertyOptional({
+    example: 10,
+  })
+  @Expose()
+  @Type(() => Number)
+  total: number = 10;
 }
 
 export class ErrorResponseDto {
