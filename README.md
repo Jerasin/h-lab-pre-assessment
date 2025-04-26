@@ -24,3 +24,12 @@ Ans: สร้าง Table Product ไว้เก็บข้อมูล Uniqu
 - Testing Strategy: Explain your strategy for testing these APIs, including how you will handle unit tests, integration tests, and any end-to-end testing considerations.Please provide a detailed explanation of your design decisions for each of these aspects. <br>
 Ans: Unit Test เป็นการทดสอบย่อยในระดับ function จำนวนในการทดสอบจะเยอะเพราะเป็นการทดสอบ function ย่อยๆไป ควรเขียนในทุกๆ function ที่มี logic ที่ซับซ้อนใน function เพื่อลดการเกิด error
      Integration Test เป็นการทดสอบ "การทำงานร่วมกัน" (integration) ของหลาย ๆ ส่วนในระบบ ว่าทำงานถูกต้องเมื่อต่อเข้าด้วยกันจริงๆ ไม่ใช่แค่ทดสอบ function เดี่ยว ๆ แบบ Unit Test ใช้ในแต่เป็นการทดสอบ หลาย module/service/component ที่เชื่อมกัน End-to-End (E2E) Test ทดสอบ full flow ตั้งแต่ request ถึง response แบบ production-like 
+
+# Helper
+**How To Run**
+```
+make dev
+```
+
+**Document API**
+[swagger](http://localhost:3000/api)
