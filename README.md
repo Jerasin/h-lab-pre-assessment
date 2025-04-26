@@ -2,7 +2,7 @@
 
   
 
-1. **Assuming the system currently has three microservices: Customer API, Master Data API, and Transaction Data API, there is a new feature that requires data from all three microservices to be displayed in near real-time. The current technology stack includes REST APIs and an RDBMS database. How would you design a new API for this feature?** \n
+1. **Assuming the system currently has three microservices: Customer API, Master Data API, and Transaction Data API, there is a new feature that requires data from all three microservices to be displayed in near real-time. The current technology stack includes REST APIs and an RDBMS database. How would you design a new API for this feature?** <br>
 Ans: ทำ service กลางขึ้นมาเพื่อเป็นตัวกลางค่อยเรียก 3 service ที่เหลือแบบ parallel เพื่อช่วยลด network latency กับ overhead มีการทำ cache เพื่อลดการประมวลผลซ้ำๆที่ไม่จำเป็น
 
 2. **Assuming the team has started planning a new project, the project manager asks you for a performance test strategy plan for this release. How would you recommend proceeding to the project manager?**
