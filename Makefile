@@ -1,5 +1,8 @@
 dev: destroy build up logs
 
+format:
+	 npx eslint . --fix
+
 build:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build $(c)
 destroy:
