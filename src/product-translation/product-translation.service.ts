@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { ProductTranslation } from './entities/product-translation.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -22,7 +22,11 @@ export class ProductTranslationService {
   // }
 
   async findAll() {
-    return this.productTranslationRepo.find();
+    try {
+      return this.productTranslationRepo.find();
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 
   // findOne(id: number) {
