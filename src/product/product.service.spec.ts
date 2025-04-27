@@ -6,7 +6,6 @@ import { getRepositoryToken, TypeOrmModule } from '@nestjs/typeorm';
 import { SearchProductDto } from './dto/search-product.dto';
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
-import { ProductTranslation } from 'src/product-translation/entities/product-translation.entity';
 import { CreateProductTranslationDto } from 'src/product-translation/dto/create-product-translation.dto';
 
 const mockProductRepo = {
