@@ -4,7 +4,6 @@ import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { CreateProductTranslationDto } from 'src/product-translation/dto/create-product-translation.dto';
 import { SearchProductDto } from './dto/search-product.dto';
-import * as request from 'supertest';
 import { INestApplication } from '@nestjs/common';
 
 const products = {

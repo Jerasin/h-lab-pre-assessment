@@ -28,10 +28,10 @@ import { join } from 'path';
         database: config.get('DB_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
-        logging: true, 
+        logging: true,
       }),
     }),
-    
+
     ProductModule,
     ProductTranslationModule,
   ],

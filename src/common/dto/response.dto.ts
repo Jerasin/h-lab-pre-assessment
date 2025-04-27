@@ -1,6 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsNumberString, IsOptional } from 'class-validator';
+import { Expose, Type } from 'class-transformer';
 
 export class ResponseDto<T> {
   @ApiProperty({ example: 200 })

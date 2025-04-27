@@ -1,23 +1,13 @@
 FROM node:22.15.0-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Install dependencies
 COPY package*.json ./
+
 RUN npm install
 
-# Install dev dependencies (ถ้าใช้แบบแยก)
-# RUN npm install --only=dev
-
-# Copy source code
 COPY . .
 
-# Install optional: ts-node-dev สำหรับ hot reload ถ้ายังไม่มี
-# RUN npm install -D ts-node-dev
-
-# Expose port (default ของ NestJS)
 EXPOSE 3000
 
-# Run in dev mode with hot reload
 CMD ["npm", "run", "start:dev"]

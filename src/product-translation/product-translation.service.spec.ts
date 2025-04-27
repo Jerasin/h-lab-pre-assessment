@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ProductTranslationService } from './product-translation.service';
 import { Repository } from 'typeorm';
 import { ProductTranslation } from './entities/product-translation.entity';
-import { getRepositoryToken, TypeOrmModule } from '@nestjs/typeorm';
+import { getRepositoryToken } from '@nestjs/typeorm';
 
 const mockProductTranslationRepository = {
   // Mock methods of ProductTranslationRepository

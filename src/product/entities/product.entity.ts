@@ -1,20 +1,20 @@
-import { ProductTranslation } from "src/product-translation/entities/product-translation.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { ProductTranslation } from 'src/product-translation/entities/product-translation.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('products')
 export class Product {
-    @PrimaryGeneratedColumn()
-    id: number;
-  
-    @Column({ default: true })
-    isActive: boolean;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column('float')
-    price: number;
+  @Column({ default: true })
+  isActive: boolean;
 
-    @Column()
-    amount: number;
+  @Column('float')
+  price: number;
 
-    @OneToMany(() => ProductTranslation, (t) => t.product, { cascade: true })
-    translations: ProductTranslation[];
+  @Column()
+  amount: number;
+
+  @OneToMany(() => ProductTranslation, (t) => t.product, { cascade: true })
+  translations: ProductTranslation[];
 }

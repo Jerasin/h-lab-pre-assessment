@@ -1,47 +1,24 @@
-import { Controller, Get, Post, Body, Query } from '@nestjs/common';
+import { Controller, Body, Query } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
-import {
-  ApiBadRequestResponse,
-  ApiBody,
-  ApiCreatedResponse,
-  ApiInternalServerErrorResponse,
-  ApiNotFoundResponse,
-  ApiOkResponse,
-  ApiOperation,
-} from '@nestjs/swagger';
+
 import { SearchProductDto } from './dto/search-product.dto';
 import { PaginationProductResponseDto } from './dto/product-response.dto';
-import {
-  ErrorResponseDto,
-  CreateSuccesstDto,
-} from 'src/common/dto/response.dto';
+
+import { CreateProduct, SearchProduct } from './product.decorator';
 
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
-  @Post()
-  @ApiOperation({ summary: 'Create a new product' })
-  @ApiBody({ type: CreateProductDto })
-  @ApiCreatedResponse({ type: CreateSuccesstDto })
-  @ApiBadRequestResponse({
-    description: 'Invalid product data',
-    type: ErrorResponseDto,
-  })
-  @ApiNotFoundResponse({ type: ErrorResponseDto })
-  @ApiInternalServerErrorResponse({
-    description: 'Unexpected error',
-    type: ErrorResponseDto,
-  })
+  @CreateProduct()
   async create(@Body() createProductDto: CreateProductDto) {
     const product = await this.productService.create(createProductDto);
 
     return product;
   }
 
-  @Get('search')
-  @ApiOkResponse({ type: PaginationProductResponseDto })
+  @SearchProduct()
   findAll(
     @Query() query: SearchProductDto,
   ): Promise<PaginationProductResponseDto> {

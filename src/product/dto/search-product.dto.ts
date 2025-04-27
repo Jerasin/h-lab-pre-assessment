@@ -1,6 +1,6 @@
-import { IsOptional, IsString, IsNumberString, IsEmpty, IsInt } from 'class-validator';
-import { Transform, Type } from 'class-transformer';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiPropertyOptional } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
+import { IsInt, IsOptional, IsString } from 'class-validator';
 
 export class SearchProductDto {
   @ApiPropertyOptional({

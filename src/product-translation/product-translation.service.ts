@@ -1,7 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProductTranslationDto } from './dto/create-product-translation.dto';
-import { UpdateProductTranslationDto } from './dto/update-product-translation.dto';
-import { DataSource, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { ProductTranslation } from './entities/product-translation.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
